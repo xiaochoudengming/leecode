@@ -1,0 +1,25 @@
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        n=len(nums)
+        def quick_sort(left,right):
+            if left>right:
+                return nums
+            i,j=left,right
+
+            pivot=random.randit(left,right)
+            nums[pivot],nums[left]=nums[left],nums[pivot]
+            pivot=left
+            while i<j:
+                while i<j and nums[i]<=nums[pivot]:
+                    i+=1
+                while i<j and nums[j]>nums[pivot]:
+                    j+=1
+                nums[i], nums[j] = nums[j], nums[i]
+            nums[pivot],nums[j]=nums[j],nums[pivot]
+            quick_sort(left,j-1)
+            quick_sort(j+1,right)
+            return nums
+        return quick_sort(0,n-1)
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        return sorted(nums)
