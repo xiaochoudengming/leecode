@@ -30,3 +30,10 @@ class Solution:
 
         quick_sort(0, len(nums) - 1)
         return nums
+
+Hoare 方法用两个指针 i、j 从两边往中间靠。
+交换时，pivot 不一定在末尾，只是保证左边都比 pivot 小，右边都比 pivot 大。
+循环结束后：
+左边部分范围：left → j
+右边部分范围：i → right
+中间 i 和 j 已经交叉。
