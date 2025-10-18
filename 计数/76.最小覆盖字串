@@ -1,0 +1,22 @@
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        if not s or not t:
+            return ""
+        word_len_s = len(s)
+        word_len_t = len(t)
+        if word_len_s < word_len_t:
+            return ""
+        
+        need = Counter(t)
+        res = ""
+        min_len = float("inf")
+
+        for i in range(word_len_s):
+            window=Counter()
+            for j in range(word_len_s):
+                windows[s[j]]+=1
+                if all(windows[c]>=need[c] for c in need)
+                    if (j-i+1)<min_len:
+                        res=s[i:j+1]
+                break
+        return res
